@@ -66,7 +66,7 @@ public class Vehicle {
         return isRented;
     }
 
-    public void setRented(boolean rented) {
+    protected void setRented(boolean rented) {
         isRented = rented;
     }
 

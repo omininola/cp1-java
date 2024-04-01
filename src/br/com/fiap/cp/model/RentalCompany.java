@@ -9,10 +9,11 @@ public class RentalCompany {
     Scanner scan = new Scanner(System.in);
     public Client registerClient(){
 
+        System.out.println("");
         System.out.println("------------------------------------------------------------------");
         System.out.println("-------------------- Registering a new client! -------------------");
         System.out.println("------------------------------------------------------------------");
-
+        System.out.println("");
 
         System.out.println("Could you please tell us your name: ");
         String name = scan.nextLine();
@@ -42,9 +43,11 @@ public class RentalCompany {
 
     public Vehicle registerVehicle(){
 
+        System.out.println("");
         System.out.println("------------------------------------------------------------------");
         System.out.println("------------------- Registering a new vehicle! -------------------");
         System.out.println("------------------------------------------------------------------");
+        System.out.println("");
 
         System.out.println("Could you please insert the values of the car's color (r,g,b) [255,0,0]: ");
         String rgb = scan.nextLine();
@@ -72,9 +75,11 @@ public class RentalCompany {
 
     public void rentCar(Client renter, Vehicle car){
 
+        System.out.println("");
         System.out.println("------------------------------------------------------------------");
         System.out.println("-------------------------- Renting a car! ------------------------");
         System.out.println("------------------------------------------------------------------");
+        System.out.println("");
 
         if (!car.isRented() && renter.getCnh().validateCnh() && !renter.isRenting()) {
             System.out.println("For how long do you want to rent this car (days): ");
@@ -92,9 +97,11 @@ public class RentalCompany {
 
     public void unrentCar(Vehicle car){
 
+        System.out.println("");
         System.out.println("------------------------------------------------------------------");
         System.out.println("------------------------- Unrenting a car! -----------------------");
         System.out.println("------------------------------------------------------------------");
+        System.out.println("");
 
         if (car.isRented()){
             car.getRenter().setRenting(false);

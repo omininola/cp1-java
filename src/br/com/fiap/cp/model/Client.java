@@ -6,7 +6,7 @@ public class Client {
     private String name;
     private Cnh cnh;
     private String cpf;
-    private Vehicle rentedCar;
+    private Vehicle rentedCar = null;
     private boolean isRenting = false;
 
     public Client(String name, Cnh cnh, String cpf) {
@@ -42,7 +42,7 @@ public class Client {
         return isRenting;
     }
 
-    public void setRenting(boolean renting) {
+    protected void setRenting(boolean renting) {
         isRenting = renting;
     }
 }
