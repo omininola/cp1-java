@@ -36,9 +36,9 @@ public class RentalCompany {
             case 4:
                 System.out.println("Thank you for working with us! Goodbye!");
                 break;
-            default:
-                showOptions();
-                break;
+//            default:
+//                showOptions();
+//                break;
         }
     }
 
@@ -68,7 +68,7 @@ public class RentalCompany {
         String cnhExpiryDate = scan.nextLine();
 
         while (!cnh.checkDatePattern(cnhExpiryDate)){
-            System.out.println("Could you please insert your CNH's emission date (dd-mm-yyyy): ");
+            System.out.println("Could you please insert your CNH's expiration date (dd-mm-yyyy): ");
             cnhExpiryDate = scan.nextLine();
         }
 
