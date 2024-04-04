@@ -10,8 +10,8 @@ import java.util.Scanner;
 
 public class RentalCompany {
     Scanner scan = new Scanner(System.in);
-    ArrayList<Client> registeredClients = new ArrayList<Client>();
-    ArrayList<Vehicle> registeredVehicles = new ArrayList<Vehicle>();
+    ArrayList<Client> registeredClients = new ArrayList<>();
+    ArrayList<Vehicle> registeredVehicles = new ArrayList<>();
     public void showOptions(){
 
         String[] options = {"Register Client", "Register Vehicle", "Rent Vehicle", "Unrent Vehicle", "Exit"};
@@ -42,7 +42,7 @@ public class RentalCompany {
         }
     }
 
-    private Client registerClient(){
+    private void registerClient(){
 
         System.out.println("\n------------------------------------------------------------------");
         System.out.println("-------------------- Registering a new client! -------------------");
@@ -80,16 +80,12 @@ public class RentalCompany {
 
         System.out.println("Thanks for registering with us, " + name);
 
-        Client client = new Client(name, cnh, cpf);
-
-        registeredClients.add(client);
+        registeredClients.add(new Client(name, cnh, cpf));
 
         showOptions();
-
-        return client;
     }
 
-    private Vehicle registerVehicle(){
+    private void registerVehicle(){
 
         System.out.println("\n------------------------------------------------------------------");
         System.out.println("------------------- Registering a new vehicle! -------------------");
@@ -121,32 +117,28 @@ public class RentalCompany {
         System.out.println("Would you please inform the price per day of this vehicle: ");
         float pricePerDay = scan.nextFloat();
 
-        Vehicle vehicle = new Vehicle(color, model, plate, engine, pricePerDay);
-
-        registeredVehicles.add(vehicle);
+        registeredVehicles.add(new Vehicle(color, model, plate, engine, pricePerDay));
 
         showOptions();
-
-        return vehicle;
     }
 
-    private Client findClient(String infomedCpf) {
+    private Client findClient(String givenCpf) {
 
         Client findedClient = null;
 
         for (Client client : registeredClients) {
-            if (Objects.equals(client.getCpf(), infomedCpf)) findedClient = client;
+            if (Objects.equals(client.getCpf(), givenCpf)) findedClient = client;
         }
 
         return findedClient;
     }
 
-    private Vehicle findVehicle(String carPlate) {
+    private Vehicle findVehicle(String givenCarPlate) {
 
         Vehicle findedVehicle = null;
 
         for (Vehicle vehicle : registeredVehicles) {
-            if (Objects.equals(vehicle.getPlate(), carPlate)) findedVehicle = vehicle;
+            if (Objects.equals(vehicle.getPlate(), givenCarPlate)) findedVehicle = vehicle;
         }
 
         return findedVehicle;
