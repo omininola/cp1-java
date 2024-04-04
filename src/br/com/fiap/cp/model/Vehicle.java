@@ -9,17 +9,25 @@ public class Vehicle {
     private String model;
     private String plate;
     private String engine;
-    private double pricePerDay;
+    private float pricePerDay;
     private boolean isRented = false;
     private int rentedDays = 0;
     private Client renter = null;
 
-    public Vehicle(Color color, String model, String plate, String engine, double pricePerDay) {
+    public Vehicle(Color color, String model, String plate, String engine, float pricePerDay) {
         this.color = color;
         this.model = model;
         this.plate = plate;
         this.engine = engine;
         this.pricePerDay = pricePerDay;
+    }
+
+    public String getData(){
+        return "\nColor: " + this.color.getName() +
+                "\nPlate: " + this.plate +
+                "\nModel: " + this.model +
+                "\nEngine: " + this.engine +
+                "\nPrice/Day: " + this.pricePerDay + "\n";
     }
 
     public Color getColor() {
@@ -54,11 +62,11 @@ public class Vehicle {
         this.engine = engine;
     }
 
-    public double getPricePerDay() {
+    public float getPricePerDay() {
         return pricePerDay;
     }
 
-    public void setPricePerDay(double pricePerDay) {
+    public void setPricePerDay(float pricePerDay) {
         this.pricePerDay = pricePerDay;
     }
 

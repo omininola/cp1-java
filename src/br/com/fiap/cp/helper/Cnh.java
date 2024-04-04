@@ -2,6 +2,9 @@ package br.com.fiap.cp.helper;
 
 import java.lang.reflect.Array;
 import java.time.LocalDate;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Cnh {
 
     private LocalDate emissionDate;
@@ -26,6 +29,12 @@ public class Cnh {
         int day = Integer.parseInt(dateSplited[0]);
 
         return LocalDate.of(year, month, day);
+    }
+
+    public boolean checkDatePattern(String date){
+        Pattern pattern = Pattern.compile("^\\d{2}-\\d{2}-\\d{4}$", Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(date);
+        return matcher.find();
     }
 
     public LocalDate getEmissionDate() {

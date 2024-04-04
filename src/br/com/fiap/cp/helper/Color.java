@@ -1,5 +1,8 @@
 package br.com.fiap.cp.helper;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Color {
 
     private int r;
@@ -7,12 +10,21 @@ public class Color {
     private int b;
     private String name;
 
-    public Color(String rgb, String name) {
-        String[] splitedInfos = rgb.split(",");
+    public Color(String name) {
+        this.name = name;
+    }
+
+    public boolean checkColorPatter(String rbgValues){
+        Pattern pattern = Pattern.compile("^\\d{1,3},\\d{1,3},\\d{1,3}$", Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(rbgValues);
+        return matcher.find();
+    }
+
+    public void setRgb(String rgbValues){
+        String[] splitedInfos = rgbValues.split(",");
         this.r = Integer.parseInt(splitedInfos[0]);
         this.g = Integer.parseInt(splitedInfos[1]);
         this.b = Integer.parseInt(splitedInfos[2]);
-        this.name = name;
     }
 
     public int getR() {
