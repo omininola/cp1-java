@@ -41,7 +41,7 @@ public class RentalCompany {
 
     private void registerClient(){
 
-        System.out.printf("%n------------------------------------------------------------------%n-------------------- Registering a new client! -------------------%n------------------------------------------------------------------%n");
+        System.out.printf("%n-------------------- Registering a new client! -------------------%n");
 
         System.out.printf("%nCould you please tell us your name: ");
         String name = scan.nextLine();
@@ -82,7 +82,7 @@ public class RentalCompany {
 
     private void registerVehicle(){
 
-        System.out.printf("%n------------------------------------------------------------------%n------------------- Registering a new vehicle! -------------------%n------------------------------------------------------------------%n");
+        System.out.printf("%n------------------- Registering a new vehicle! -------------------%n");
 
         System.out.printf("%nCould you please insert the name of the car's color: ");
         String colorName = scan.nextLine();
@@ -138,7 +138,7 @@ public class RentalCompany {
     }
     private void rentCar(){
 
-        System.out.printf("%n------------------------------------------------------------------%n-------------------------- Renting a car! ------------------------%n------------------------------------------------------------------%n");
+        System.out.printf("%n-------------------------- Renting a car! ------------------------%n");
 
         System.out.printf("%nTell me the client cpf: ");
         Client renter = findClient(scan.nextLine());
@@ -176,7 +176,7 @@ public class RentalCompany {
 
     private void unrentCar(){
 
-        System.out.printf("%n------------------------------------------------------------------%n------------------------- Unrenting a car! -----------------------%n------------------------------------------------------------------%n");
+        System.out.printf("%n------------------------- Unrenting a car! -----------------------%n");
 
         System.out.printf("%nTell me the plate of the car you want to unrent: ");
         Vehicle car = findVehicle(scan.nextLine());
@@ -192,9 +192,9 @@ public class RentalCompany {
             car.setRenter(null);
             car.setRentedDays(0);
             car.setRented(false);
-            System.out.printf("%nThe car (" + car.getModel() + ") was unrented!%n");
+            System.out.printf("%nThe car (" + car.getPlate() + ") was unrented!%n");
         } else {
-            System.out.printf("%nThe car(" + car.getModel() + ") has not even been rented yet!%n");
+            System.out.printf("%nThe car(" + car.getPlate() + ") has not even been rented yet!%n");
         }
 
         showOptions();
