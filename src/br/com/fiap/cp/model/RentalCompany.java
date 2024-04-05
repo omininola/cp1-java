@@ -165,7 +165,9 @@ public class RentalCompany {
             car.setRenter(renter);
             car.setRented(true);
 
+            renter.setRentedCar(car);
             renter.setRenting(true);
+
             System.out.printf("%nThank you for renting our car, it'll be only R$ " + car.getPricePerDay() * car.getRentedDays() + "! (" + car.getModel() + " is ready for use, " + renter.getName() + ")%n");
         } else {
             System.out.printf("%nSorry, the car (" + car.getModel() + ") could not be rented for one of these 3 reasons:%nThe car is already rented;%nThe renter CNH has expired;%nThe renter is already renting another car.%n");
@@ -189,9 +191,12 @@ public class RentalCompany {
 
         if (car.isRented()){
             car.getRenter().setRenting(false);
+            car.getRenter().setRentedCar(null);
+
             car.setRenter(null);
             car.setRentedDays(0);
             car.setRented(false);
+
             System.out.printf("%nThe car (" + car.getPlate() + ") was unrented!%n");
         } else {
             System.out.printf("%nThe car(" + car.getPlate() + ") has not even been rented yet!%n");

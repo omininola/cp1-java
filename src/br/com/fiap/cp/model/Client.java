@@ -44,6 +44,14 @@ public class Client {
         this.cpf = cpf;
     }
 
+    public Vehicle getRentedCar(){
+        return this.rentedCar;
+    }
+
+    public void setRentedCar(Vehicle rentedCar){
+        this.rentedCar = rentedCar;
+    }
+
     public boolean isRenting() {
         return isRenting;
     }
