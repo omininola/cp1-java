@@ -27,7 +27,7 @@ public class Vehicle {
                 "\nPlate: " + this.plate +
                 "\nModel: " + this.model +
                 "\nEngine: " + this.engine +
-                "\nPrice/Day: " + this.pricePerDay + "\n";
+                "\nPrice/Day: " + this.pricePerDay;
     }
 
     public Color getColor() {

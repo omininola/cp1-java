@@ -14,7 +14,7 @@ public class Color {
         this.name = name;
     }
 
-    public boolean checkColorPatter(String rbgValues){
+    public boolean checkColorPattern(String rbgValues){
         Pattern pattern = Pattern.compile("^\\d{1,3},\\d{1,3},\\d{1,3}$", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(rbgValues);
         return matcher.find();

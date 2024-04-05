@@ -18,7 +18,7 @@ public class Client {
     public String getData(){
         return "\nName: " + this.name +
                 "\nCPF: " + this.cpf +
-                "\nCNH: " + this.cnh.getRegistrationNum() + "\n";
+                "\nCNH: " + this.cnh.getRegistrationNum();
     }
     public String getName() {
         return name;
